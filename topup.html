@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Top Up</title>
+
+    <link rel="stylesheet" href="css/tabler.min.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <script src="js/tailwind.min.js"></script>
+</head>
+
+
+
+
+<body class="bg-darkBg text-white ">
+
+    <header class="bg-black/40 backdrop-blur-lg border-b border-gray-800 fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- LOGO -->
+            <h1 class="text-xl font-bold bg-gradient-to-r from-yellow-300 to-purple-500 bg-clip-text text-transparent">
+                GameShop
+            </h1>
+
+            <!-- DESKTOP MENU -->
+            <nav class="hidden md:flex gap-6 text-sm text-white">
+                <a href="index.html" class="hover:text-yellow-300 transition">
+                    Home
+                </a>
+
+                <a href="topup.html" class="hover:text-yellow-300 transition">
+                    Top Up
+                </a>
+            </nav>
+
+
+            <div class="flex items-center gap-3">
+
+                <button class="p-2 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/20 transition">
+                    <i class="ti ti-search text-white text-xl"></i>
+                </button>
+
+
+                <button onclick="toggleMenu()" class="md:hidden p-2 rounded-full bg-white/10">
+                    <i class="ti ti-menu-2 text-white text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 z-40 hidden"></div>
+
+
+    <div id="mobileMenu"
+        class="fixed top-0 right-[-100%] w-[280px] h-full bg-[#14052d] z-50 transition-all duration-300 shadow-2xl">
+
+        <div class="flex items-center justify-between p-5 border-b border-purple-500/20">
+            <h2 class="text-xl font-bold text-white">Menu</h2>
+
+            <button onclick="toggleMenu()">
+                <i class="ti ti-x text-white text-3xl"></i>
+            </button>
+        </div>
+
+
+        <div class="p-5 flex flex-col gap-4 text-white">
+            <a href="index.html" class="bg-white/5 hover:bg-purple-600 px-4 py-4 rounded-2xl transition">
+                Home
+            </a>
+
+            <a href="topup.html" class="bg-white/5 hover:bg-purple-600 px-4 py-4 rounded-2xl transition">
+                Top Up
+            </a>
+        </div>
+
+
+        <div class="absolute bottom-6 left-0 w-full px-5">
+            <div class="grid grid-cols-2 gap-3">
+                <a href="#" class="bg-white/10 text-white py-3 rounded-xl text-center">
+                    Login
+                </a>
+
+                <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl text-center">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-[#0b0120] min-h-screen py-20 px-4 text-white">
+
+        <div class="max-w-2xl mx-auto bg-[#14052d] rounded-3xl p-6 md:p-8 shadow-2xl">
+
+
+            <h2 class="text-3xl font-bold mb-8">
+                Top Up Balance
+            </h2>
+
+            <div>
+                <label class="block mb-3 text-sm text-gray-300">
+                    Enter Amount
+                </label>
+
+                <input type="number" id="amountInput" placeholder="Enter amount" class="w-full bg-[#1d0a3f] border border-purple-500/30
+                rounded-xl px-4 py-4 outline-none
+                focus:border-purple-500 transition">
+            </div>
+
+            <div class="grid grid-cols-3 md:grid-cols-5 gap-3 mt-5">
+
+                <button class="amount-btn bg-[#1d0a3f] hover:bg-purple-600 rounded-xl py-3 transition">
+                    3000
+                </button>
+
+                <button class="amount-btn bg-[#1d0a3f] hover:bg-purple-600 rounded-xl py-3 transition">
+                    5000
+                </button>
+
+                <button class="amount-btn bg-[#1d0a3f] hover:bg-purple-600 rounded-xl py-3 transition">
+                    10000
+                </button>
+
+                <button class="amount-btn bg-[#1d0a3f] hover:bg-purple-600 rounded-xl py-3 transition">
+                    20000
+                </button>
+
+                <button class="amount-btn bg-[#1d0a3f] hover:bg-purple-600 rounded-xl py-3 transition">
+                    30000
+                </button>
+
+            </div>
+
+
+            <div class="mt-10">
+
+                <h3 class="text-xl font-semibold mb-5">
+                    Payment Method
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-4">
+
+
+                    <label
+                        class="payment-card cursor-pointer border border-purple-500/20 rounded-2xl p-4 bg-[#1d0a3f] flex items-center gap-4">
+
+                        <input type="radio" name="payment" class="accent-purple-500">
+
+                        <img src="./image/kapy.png" class="w-14 h-14 object-contain bg-white rounded-xl p-2">
+
+                        <div>
+                            <h4 class="font-semibold">KBZ Pay</h4>
+                            <p class="text-sm text-gray-400">09 123 456 789</p>
+                        </div>
+
+                    </label>
+
+
+                    <label
+                        class="payment-card cursor-pointer border border-purple-500/20 rounded-2xl p-4 bg-[#1d0a3f] flex items-center gap-4">
+
+                        <input type="radio" name="payment" class="accent-purple-500">
+
+                        <img src="../image/wave.png" class="w-14 h-14 object-contain bg-white rounded-xl p-2">
+
+                        <div>
+                            <h4 class="font-semibold">Wave Pay</h4>
+                            <p class="text-sm text-gray-400">09 987 654 321</p>
+                        </div>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- LAST 6 DIGIT -->
+            <div class="mt-10">
+
+                <label class="block mb-3 text-sm text-gray-300">
+                    Last 6 Digits Of Transaction
+                </label>
+
+                <input type="text" placeholder="Eg. 123456" class="w-full bg-[#1d0a3f] border border-purple-500/30
+                rounded-xl px-4 py-4 outline-none
+                focus:border-purple-500 transition">
+
+            </div>
+
+
+            <div class="mt-10">
+
+                <label class="block mb-3 text-sm text-gray-300">
+                    Payment Screenshot
+                </label>
+
+                <input type="file" id="imageInput" accept="image/*" class="hidden">
+
+                <label for="imageInput" class="border-2 border-dashed border-purple-500/30
+                rounded-2xl h-30 flex items-center justify-center
+                cursor-pointer bg-[#1d0a3f] overflow-hidden">
+
+                    <img id="previewImage" class="hidden w-full h-full object-cover">
+
+                    <div id="uploadText" class="text-center">
+                        <p class="text-lg">Upload Screenshot</p>
+                        <p class="text-sm text-gray-400 mt-1">
+                            PNG, JPG
+                        </p>
+                    </div>
+
+                </label>
+
+            </div>
+
+
+            <button class="w-full mt-10 bg-purple-600 hover:bg-purple-700
+            py-4 rounded-2xl text-lg font-semibold transition">
+
+                Submit Payment
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <footer class="border-t border-gray-800 py-6 text-center text-gray-400 text-sm">
+        © 2026 GameShop
+    </footer>
+    <script>
+
+        const amountBtns = document.querySelectorAll(".amount-btn");
+        const amountInput = document.getElementById("amountInput");
+
+        amountBtns.forEach(btn => {
+
+            btn.addEventListener("click", () => {
+
+                amountInput.value = btn.innerText;
+
+            });
+
+        });
+
+
+        const imageInput = document.getElementById("imageInput");
+        const previewImage = document.getElementById("previewImage");
+        const uploadText = document.getElementById("uploadText");
+
+        imageInput.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+            if (file) {
+
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+
+                    previewImage.src = e.target.result;
+
+                    previewImage.classList.remove("hidden");
+
+                    uploadText.classList.add("hidden");
+
+                }
+
+                reader.readAsDataURL(file);
+
+            }
+
+        });
+    </script>
+
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,5 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8" />
@@ -7,38 +8,36 @@
 
     <title>Game Shop</title>
 
-    <script src="./static/js/tailwind.min.js"></script>
 
-    <link rel="stylesheet" href="./static/css/tabler.min.css">
-    <link rel="stylesheet" href="./static/css/swiper.min.css" />
-    <link rel="stylesheet" href="./static/css/style.css">
-    <script src="./static/js/swiper.min.js"></script>
-    <script src="./static/js/script.js"></script>
+    <script src="js/tailwind.min.js"></script>
+    <link rel="stylesheet" href="css/tabler.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/swiper.min.css" type="text/css" />
 
 </head>
 
-
-
-
 <body class="bg-darkBg text-white">
-
-    <header class="bg-black/40 backdrop-blur-lg border-b border-gray-800 fixed w-full z-50">
+    <header class="bg-black/40 backdrop-blur-lg border-b border-gray-800 fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <h1 class="text-xl font-bold bg-gradient-to-r from-neoYellow to-neoPurple bg-clip-text text-transparent">
+            <!-- LOGO -->
+            <h1 class="text-xl font-bold bg-gradient-to-r from-yellow-300 to-purple-500 bg-clip-text text-transparent">
                 GameShop
             </h1>
 
+            <!-- DESKTOP MENU -->
+            <nav class="hidden md:flex gap-6 text-sm text-white">
+                <a href="index.html" class="hover:text-yellow-300 transition">
+                    Home
+                </a>
 
-            <nav class="hidden md:flex gap-6 text-sm">
-                <a href="#" class="hover:text-neoYellow">Home</a>
-                <a href="#" class="hover:text-neoYellow">Topup</a>
-                <a href="#" class="hover:text-neoYellow">Contact</a>
+                <a href="topup.html" class="hover:text-yellow-300 transition">
+                    Top Up
+                </a>
             </nav>
 
 
             <div class="flex items-center gap-3">
 
-                <button onclick="toggleSearch()" class="p-2 rounded-full bg-white/10 backdrop-blur-md">
+                    <button onclick="toggleSearch()" class="p-2 rounded-full bg-white/10 backdrop-blur-md">
                     <i class="ti ti-search text-white text-xl"></i>
                 </button>
 
@@ -48,106 +47,94 @@
                 </button>
             </div>
         </div>
-
-
-        <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
-            <a href="#" class="block py-2 border-b border-gray-700">Home</a>
-            <a href="#" class="block py-2 border-b border-gray-700">Topup</a>
-            <a href="#" class="block py-2">Contact</a>
-        </div>
     </header>
+
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 z-40 hidden"></div>
+
+
+    <div id="mobileMenu"
+        class="fixed top-0 right-[-100%] w-[280px] h-full bg-[#14052d] z-50 transition-all duration-300 shadow-2xl">
+
+        <div class="flex items-center justify-between p-5 border-b border-purple-500/20">
+            <h2 class="text-xl font-bold text-white">Menu</h2>
+
+            <button onclick="toggleMenu()">
+                <i class="ti ti-x text-white text-3xl"></i>
+            </button>
+        </div>
+
+
+        <div class="p-5 flex flex-col gap-4 text-white">
+            <a href="index.html" class="bg-white/5 hover:bg-purple-600 px-4 py-4 rounded-2xl transition">
+                Home
+            </a>
+
+            <a href="topup.html" class="bg-white/5 hover:bg-purple-600 px-4 py-4 rounded-2xl transition">
+                Top Up
+            </a>
+        </div>
+
+
+        <div class="absolute bottom-6 left-0 w-full px-5">
+            <div class="grid grid-cols-2 gap-3">
+                <a href="#" class="bg-white/10 text-white py-3 rounded-xl text-center">
+                    Login
+                </a>
+
+                <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl text-center">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </div>
 
     <section class="bg-[#0b0120] pt-32 pb-16 overflow-hidden">
 
-        <!-- pt-32 = navbar space fix -->
 
         <div class="swiper mySwiper px-4">
-
             <div class="swiper-wrapper">
 
-                <!-- SLIDE -->
                 <div class="swiper-slide !flex justify-center">
-                    <div class="relative w-[900px] h-[360px] 
-                    max-md:w-[92%] max-md:h-[220px]
-                    rounded-2xl overflow-hidden
-                    shadow-[0_20px_50px_rgba(0,0,0,0.45)]
-                    transition-all duration-300">
-
+                    <div
+                        class="relative w-[900px] h-[360px] max-md:w-[92%] max-md:h-[220px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.45)] transition-all duration-300">
                         <img src="./image/slider.jpg" class="w-full h-full object-cover" />
 
-                        <!-- overlay -->
-                        <div class="absolute inset-0 
-                      bg-gradient-to-r 
-                      from-black/80 via-black/30 to-transparent"></div>
 
-                        <!-- text -->
-                        <div class="absolute bottom-6 left-6 text-white z-10">
-                            <h2 class="text-3xl md:text-4xl font-bold">
-                                PUBG MOBILE X BLUE LOCK
-                            </h2>
-                            <p class="mt-2 text-sm text-gray-300">
-                                Prize Path & Lucky Spin
-                            </p>
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
 
+
+                        
                     </div>
                 </div>
 
-                <!-- SLIDE -->
-                <div class="swiper-slide !flex justify-center">
-                    <div class="relative w-[900px] h-[360px] 
-                    max-md:w-[92%] max-md:h-[220px]
-                    rounded-2xl overflow-hidden
-                    shadow-[0_20px_50px_rgba(0,0,0,0.45)]
-                    transition-all duration-300">
 
+                <div class="swiper-slide !flex justify-center">
+                    <div
+                        class="relative w-[900px] h-[360px] max-md:w-[92%] max-md:h-[220px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.45)] transition-all duration-300">
                         <img src="./image/slider-2.png" class="w-full h-full object-cover" />
 
                         <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
 
-                        <div class="absolute bottom-6 left-6 text-white z-10">
-                            <h2 class="text-3xl md:text-4xl font-bold">
-                                Mobile Legends
-                            </h2>
-                            <p class="mt-2 text-sm text-gray-300">
-                                Fast & Cheap Diamonds
-                            </p>
-                        </div>
-
+                       
                     </div>
                 </div>
 
-                <!-- SLIDE -->
-                <div class="swiper-slide !flex justify-center">
-                    <div class="relative w-[900px] h-[360px] 
-                    max-md:w-[92%] max-md:h-[220px]
-                    rounded-2xl overflow-hidden
-                    shadow-[0_20px_50px_rgba(0,0,0,0.45)]
-                    transition-all duration-300">
 
+                <div class="swiper-slide !flex justify-center">
+                    <div
+                        class="relative w-[900px] h-[360px] max-md:w-[92%] max-md:h-[220px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.45)] transition-all duration-300">
                         <img src="./image/slider-3.jpg" class="w-full h-full object-cover" />
 
                         <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
 
-                        <div class="absolute bottom-6 left-6 text-white z-10">
-                            <h2 class="text-3xl md:text-4xl font-bold">
-                                Genshin Impact
-                            </h2>
-                            <p class="mt-2 text-sm text-gray-300">
-                                Genesis Crystal
-                            </p>
-                        </div>
-
+                       
                     </div>
                 </div>
-
             </div>
 
-            <!-- dots -->
+
             <div class="swiper-pagination mt-6"></div>
-
         </div>
-
     </section>
     <div id="searchBox" class="hidden fixed top-16 left-0 w-full px-4 z-40">
         <div class="max-w-7xl mx-auto bg-[#151528] border border-gray-800 rounded-xl p-3 flex items-center shadow-lg">
@@ -157,13 +144,11 @@
         </div>
     </div>
 
-
     <section class="max-w-7xl mx-auto px-4 pb-12">
         <div class="grid grid-cols-2 md:grid-cols-6 gap-6">
-
             <div class="rounded-2xl overflow-hidden border border-gray-800 bg-[#151528] hover:scale-105 transition">
                 <div class="h-72 relative">
-                    <!-- HEIGHT ↑ -->
+
                     <img src="./image/mlbb.png" class="w-full h-full object-cover" />
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
@@ -176,7 +161,6 @@
                     </h3>
                 </div>
             </div>
-
 
             <div class="rounded-2xl overflow-hidden border border-gray-800 bg-[#151528] hover:scale-105 transition">
                 <div class="h-72 relative">
@@ -192,7 +176,6 @@
                 </div>
             </div>
 
-
             <div class="rounded-2xl overflow-hidden border border-gray-800 bg-[#151528] hover:scale-105 transition">
                 <div class="h-72 relative">
                     <img src="./image/mv.avif" class="w-full h-full object-cover" />
@@ -206,7 +189,6 @@
                     </h3>
                 </div>
             </div>
-
 
             <div class="rounded-2xl overflow-hidden border border-gray-800 bg-[#151528] hover:scale-105 transition">
                 <div class="h-72 relative">
@@ -250,27 +232,13 @@
         </div>
     </section>
 
-
     <footer class="border-t border-gray-800 py-6 text-center text-gray-400 text-sm">
         © 2026 GameShop
     </footer>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            loop: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            spaceBetween: 20,
 
-            autoplay: {
-                delay: 3000,
-            },
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js"></script>
 
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-    </script>
 </body>
 
 </html>
